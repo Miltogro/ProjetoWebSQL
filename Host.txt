@@ -1,0 +1,8 @@
+
+dpg-cl5fcbpo91lc7385ltmg-a
+
+7exPg72T12JsBMz5GPJli75yiqVwiZHn
+
+postgres://projetosql_user:7exPg72T12JsBMz5GPJli75yiqVwiZHn@dpg-cl5fcbpo91lc7385ltmg-a.oregon-postgres.render.com/projetosql
+
+dpg-cl5fcbpo91lc7385ltmg-a.oregon-postgres.render.com
