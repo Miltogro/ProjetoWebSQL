@@ -134,3 +134,9 @@ button:hover{
 	text-align: center;
 	position: 50px;
 }
+.botao:hover{
+	background: #6d44b8;
+}
+.botaoSair:hover{
+	background: #251149;	
+}
