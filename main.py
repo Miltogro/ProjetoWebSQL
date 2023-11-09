@@ -6,7 +6,7 @@ app.secret_key = 'tapetedeferro'
 
 @app.route("/")
 def home():
-    return render_template('index.html')#('errologin.html')#('index.html')
+    return render_template('index.html')#('mainlog.html')
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -19,7 +19,8 @@ def login():
     for usuario in tupla:
         if(login == usuario[0] and senha == usuario[1]):
             session['usuario'] = login
-            return render_template('menu.html', usuario=login)
+            return render_template('mainlog.html', usuario=login)
+
     else:
         return render_template('errologin.html')
 
@@ -34,6 +35,10 @@ def cadastrarusuario():
         return render_template('index.html')
     else:
         return render_template('errocadastro.html')
+
+@app.route("/mainlog")
+def mainlog():
+    return render_template('mainlog.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

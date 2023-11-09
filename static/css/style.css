@@ -96,3 +96,41 @@ button:hover{
 	color: #ff7f7f;
 	text-align: center;
 }
+.welcome-message {
+	position: 50px;
+	font-size: 3em;
+	font-weight: bold;
+	color: rgb(127, 219, 255);
+	text-align: center;
+}
+.botao{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #6d37d1;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 10px;
+	outline: none;
+	border: none;
+	border-radius: 100px;
+	cursor: pointer;
+	text-align: center;
+}
+.botaoSair{
+	width: 30%;
+	height: 40px;
+	margin: 50px auto;
+	display: block;
+	color: rgb(102, 124, 221);
+	background: #3f1b83;
+	font-size: 1.5em;
+	font-weight: bold;
+	border-radius: 100px;
+	cursor: pointer;
+	text-align: center;
+	position: 50px;
+}

@@ -1,7 +1,8 @@
 import psycopg2
 
 def conectardb():
-    con = psycopg2.connect(host='dpg-cl5bcns72pts73ej6mc0-a.oregon-postgres.render.com', database='servicewebdalina', user='servicewebdalina_user', password='L8MYCEW2GOgP8qDfhIGHkkAaszJoHMX0')
+    con = psycopg2.connect(host='dpg-cl5fcbpo91lc7385ltmg-a.oregon-postgres.render.com', database='projetosql',
+    user='projetosql_user', password='7exPg72T12JsBMz5GPJli75yiqVwiZHn')
 
     return con
 
