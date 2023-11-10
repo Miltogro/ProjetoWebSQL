@@ -6,16 +6,16 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to bottom, #000000, #5c5c5c, #000000);
 }
 .main{
 	width: 550px;
 	height: 500px;
-	background: red;
+	background: rgb(253, 0, 0);
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
+	box-shadow: 5px 20px 100px #000;
 }
 #chk{
 	display: none;
@@ -36,9 +36,9 @@ label{
 	transition: .5s ease-in-out;
 }
 input{
-	width: 60%;
+	width: 40%;
 	height: 20px;
-	background: #e0dede;
+	background: #ffffff;
 	justify-content: center;
 	display: flex;
 	margin: 20px auto;
@@ -48,34 +48,34 @@ input{
 	border-radius: 5px;
 }
 button{
-	width: 60%;
+	width: 30%;
 	height: 40px;
 	margin: 10px auto;
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: #000000;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
 	outline: none;
 	border: none;
-	border-radius: 5px;
+	border-radius: 10px;
 	transition: .2s ease-in;
 	cursor: pointer;
 }
 button:hover{
-	background: #6d44b8;
+	background: #383838;
 }
 .login{
 	height: 450px;
-	background: #eee;
+	background: #ffffff;
 	border-radius: 60% / 10%;
-	transform: translateY(-190px);
+	transform: translateY(-180px);
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #573b8a;
+	color: #000000;
 	transform: scale(.6);
 }
 
@@ -90,17 +90,25 @@ button:hover{
 	transform: scale(.6);
 }
 
-.error-message {
-	transform: translateY(50px);
-	position: 100px;
-	color: #ff7f7f;
-	text-align: center;
+.error-login {
+	position: absolute;
+	top: 250px;
+	left: 390px;
+	right: 200px;
+	color: red;
+}
+.error-criar {
+	position: absolute;
+	top: 250px;
+	left: 425px;
+	right: 200px;
+	color: red;
 }
 .welcome-message {
 	position: 50px;
 	font-size: 3em;
 	font-weight: bold;
-	color: rgb(127, 219, 255);
+	color: rgb(255, 255, 255);
 	text-align: center;
 }
 .botao{
@@ -110,7 +118,7 @@ button:hover{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #6d37d1;
+	background: #000000;
 	font-size: 1.5em;
 	font-weight: bold;
 	margin-top: 10px;
@@ -125,8 +133,8 @@ button:hover{
 	height: 40px;
 	margin: 50px auto;
 	display: block;
-	color: rgb(102, 124, 221);
-	background: #3f1b83;
+	color: rgb(255, 255, 255);
+	background: #000000;
 	font-size: 1.5em;
 	font-weight: bold;
 	border-radius: 100px;
@@ -135,8 +143,8 @@ button:hover{
 	position: 50px;
 }
 .botao:hover{
-	background: #6d44b8;
+	background: #292929;
 }
 .botaoSair:hover{
-	background: #251149;	
+	background: #292929;	
 }
