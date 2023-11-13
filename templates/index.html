@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+	
   <meta charset="UTF-8">
   <title>Miltogro - Noticias da Católica</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -20,11 +21,23 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 			<div class="signup">
+					{% if logado == False %}
+					<div class="error-login">Email ou Senha Incorretos</div>
+					{% endif %}
+					{% if exito == True %}
+					<div class="criou">Conta Criada com Sucesso!</div>
+					{% elif exito == False %}
+					<div class="error-criar">Usuário já Existe</div>
+					{% endif %}
 				<form action="/cadastrar" method="post">
 					<label for="chk" aria-hidden="true">Cadastre - se!</label>
 					<input type="text" name="txt" placeholder="User name" required="">
 					<input type="email" name="email" placeholder="Email" required="">
 					<input type="password" name="pswd" placeholder="Password" required="">
+					<div>
+						<label class="checkboxL">Deseja ser Criador?</label>
+						<input type="checkbox" name="rpt" class="checkbox">
+					</div>
 					<button>Criar Conta</button>
 				</form>
 			</div>

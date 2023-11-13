@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Sign up / Login Form</title>
+  <title>Miltogro - Noticias da Católica</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
@@ -23,8 +23,9 @@
 			<div class="welcome-message">
 				<p style="font-size: big">Bem - vindo</p>
 			</div>
+
     <div>
-        <form action="">
+        <form action="/cadastrar-noticia" method="post">
             <button class="botao">Cadastrar Notícia</button>
         </form>
         <p></p>
@@ -43,5 +44,6 @@
         <form action="/">
             <button class="botaoSair">Sair</button>
         </form>
+        
     </div>
 </body>

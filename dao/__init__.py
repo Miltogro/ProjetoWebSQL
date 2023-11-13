@@ -8,21 +8,22 @@ def conectardb():
 
 def listarUsuarios(conexao):
     cur = conexao.cursor()
-    cur.execute('select * from usuarios')
+    cur.execute('SELECT * FROM usuarios')
     recset = cur.fetchall()
     conexao.close()
     return recset
 
-def inserirDB(login, senha, nome, conexao):
+def inserirDB(login, senha, nome, reporter, conexao):
     cur = conexao.cursor()
 
     exito = False
     try:
-        sql = f"insert into usuarios values ('{login}', '{senha}', '{nome}')"
+        sql = f"INSERT INTO usuarios (nome, login, senha, reporter) VALUES ('{nome}', '{login}', '{senha}', '{reporter}')"
         cur.execute(sql)
-    except psycopg2.IntegrityError:
+    except psycopg2.IntegrityError as e:
         conexao.rollback()
         exito = False
+        print(e)
     else:
         conexao.commit()
         exito = True

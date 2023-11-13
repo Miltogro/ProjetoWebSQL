@@ -4,11 +4,18 @@ from dao import *
 app = Flask(__name__)
 app.secret_key = 'tapetedeferro'
 
+def varBool(reporter):
+    if reporter.lower() == 'on':
+        reporter = True
+    elif reporter.lower() == 'none':
+        reporter = False
+    return reporter
+
 @app.route("/")
 def home():
-    return render_template('index.html')#('mainlog.html')
+    return render_template('index.html')
 
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=["POST","GET"])
 def login():
     login = str(request.form.get('email'))
     senha = str(request.form.get('pswd'))
@@ -17,28 +24,38 @@ def login():
     tupla = listarUsuarios(conexao)
 
     for usuario in tupla:
-        if(login == usuario[0] and senha == usuario[1]):
+        if(login == usuario[1] and senha == usuario[2]):
             session['usuario'] = login
-            return render_template('mainlog.html', usuario=login)
+           
+            return render_template('mainlog.html', usuario=login, logado=True)
 
     else:
-        return render_template('errologin.html')
+        return render_template('index.html', logado=False)
 
-@app.route("/cadastrar", methods=["POST"])
+@app.route("/cadastrar", methods=["POST","GET"])
 def cadastrarusuario():
     login = str(request.form.get('email'))
     senha = str(request.form.get('pswd'))
     nome = str(request.form.get('txt'))
+    reporter = str(request.form.get('rpt'))
+
+    print(reporter)
+    reporter = varBool(reporter)
+    print(reporter)
 
     conexao = conectardb()
-    if inserirDB(login, senha, nome, conexao):
-        return render_template('index.html')
-    else:
-        return render_template('errocadastro.html')
+
+    insert = inserirDB(login, senha, nome, reporter, conexao)
+    
+    return render_template('index.html', exito=insert)
 
 @app.route("/mainlog")
 def mainlog():
     return render_template('mainlog.html')
+
+@app.route("/cadastrar-noticia", methods=["POST","GET"])
+def cadastrarNoticia():
+    return render_template("menuADM/cadastrar_noticia.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

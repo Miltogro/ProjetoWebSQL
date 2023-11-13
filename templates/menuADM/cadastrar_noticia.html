@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Miltogro - Noticias da Católica</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main maior">  	
+		
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="welcome-message">
+				<p style="font-size: big">Cadastrar Notícia</p>
+			</div>
+            
+            <form class="noticia-form" action="/cadastrar-noticia" method="post">
+                <input class="signdown" type="text" name="title" placeholder="Título da Notícia" required="">
+                <textarea style="resize: none" placeholder="Insira a Notícia" name="noticia" id="" cols="30" rows="10" style="height: 500px;"class="textarea"></textarea>
+
+                <div class="botoes-form">
+                    <!-- <a href="/login" style="width: 200px; background-color: rgb(0, 255, 34);">
+                    </a> -->
+                    <a class="botaoSair" style=" flex: 1;" href="/login">
+                    Voltar
+                    </a>
+                    
+                    <input style="flex: 1;" type="submit" class="botaoSair" value="Enviar"/>
+                        
+                </div>
+            </form>
+    <div>
+
+        
+    </div>
+</body>
