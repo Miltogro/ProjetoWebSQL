@@ -8,6 +8,11 @@ body{
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #000000, #5c5c5c, #000000);
 }
+
+a {
+    text-decoration: none !important;
+}
+
 .main{
 	width: 550px;
 	height: 500px;
@@ -44,7 +49,7 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
-input{
+input[type="text"], input[type="email"], input[type="password"]   {
 	width: 40%;
 	height: 20px;
 	background: #ffffff;
@@ -153,19 +158,21 @@ button:hover{
 }
 .botaoSair{
 	width: 200px;
+	max-width: 200px;
 	height: 40px;
 	/* margin: 50px auto; */
 	color: rgb(255, 255, 255);
 	background: #000000;
 	font-size: 1.5em;
 	font-weight: bold;
+	border: none;
 	border-radius: 100px;
 	cursor: pointer;
 	text-align: center;
 	/* position: 50px; */
 	display: flex;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 }
 .botao:hover{
 	background: #292929;
@@ -175,7 +182,7 @@ button:hover{
 }
 .checkbox {
 	position: absolute;
-	top: 54.3%;
+	top: 58.3%;
 	left: 0;
 	right: 27%;
 }
@@ -208,11 +215,11 @@ button:hover{
 	font-weight: 100;
 }
 .botoes-form {
+	margin-top: 10px;
 	display: flex;
 	font-size: 0.8em;
-	width: 60%;
+	width: 440px;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	background-color: red;
 }
