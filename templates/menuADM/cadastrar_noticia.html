@@ -26,16 +26,13 @@
             
             <form class="noticia-form" action="/cadastrar-noticia" method="post">
                 <input class="signdown" type="text" name="title" placeholder="Título da Notícia" required="">
-                <textarea style="resize: none" placeholder="Insira a Notícia" name="noticia" id="" cols="30" rows="10" style="height: 500px;"class="textarea"></textarea>
+                <textarea style="resize: none" name="noticia" placeholder="Insira a Notícia"  id="" cols="30" rows="10" style="height: 500px;"class="textarea"></textarea>
 
                 <div class="botoes-form">
                     <!-- <a href="/login" style="width: 200px; background-color: rgb(0, 255, 34);">
                     </a> -->
-                    <a class="botaoSair" style=" flex: 1;" href="/login">
-                    Voltar
-                    </a>
-                    
-                    <input style="flex: 1;" type="submit" class="botaoSair" value="Enviar"/>
+                    <a class="botaoSair" href="/login">Voltar</a>                    
+                    <input type="submit" class="botaoSair" value="Enviar" name=""/>
                         
                 </div>
             </form>

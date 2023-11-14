@@ -4,6 +4,8 @@ from dao import *
 app = Flask(__name__)
 app.secret_key = 'tapetedeferro'
 
+id_usuario = None
+
 def varBool(reporter):
     if reporter.lower() == 'on':
         reporter = True
@@ -25,9 +27,10 @@ def login():
 
     for usuario in tupla:
         if(login == usuario[1] and senha == usuario[2]):
+            session['id']
             session['usuario'] = login
-           
-            return render_template('mainlog.html', usuario=login, logado=True)
+            # print(id_usuario)
+            return render_template('mainlog.html', usuario=login, logado=True, id_usuario=usuario[3])
 
     else:
         return render_template('index.html', logado=False)
@@ -39,9 +42,9 @@ def cadastrarusuario():
     nome = str(request.form.get('txt'))
     reporter = str(request.form.get('rpt'))
 
-    print(reporter)
+    #print(reporter)
     reporter = varBool(reporter)
-    print(reporter)
+    #print(reporter)
 
     conexao = conectardb()
 
@@ -55,6 +58,15 @@ def mainlog():
 
 @app.route("/cadastrar-noticia", methods=["POST","GET"])
 def cadastrarNoticia():
+    tupla = listarUsuarios(conexao)
+
+    titulo = str(request.form.get('title'))
+    noticia = str(request.form.get('noticia'))
+
+    conexao = conectardb()
+
+    insert = inserirNoticia(titulo, noticia, id_usuario)
+
     return render_template("menuADM/cadastrar_noticia.html")
 
 if __name__ == "__main__":

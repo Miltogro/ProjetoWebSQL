@@ -8,6 +8,11 @@ body{
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #000000, #5c5c5c, #000000);
 }
+
+a {
+    text-decoration: none !important;
+}
+
 .main{
 	width: 550px;
 	height: 500px;
@@ -21,6 +26,29 @@ body{
 	width: 1100px;
 	height: 950px;
 	transition: width 0.5s ease;
+}
+.maior2{
+	position: absolute;
+	top: 3%;
+	width: 1100px;
+	height: 800px;
+	transition: width 0.5s ease;
+	box-shadow: 5px 20px 100px #000;
+	border-radius: 10px;
+	overflow: hidden;
+	display: inline-block;
+}
+.retangulo{
+	position: absolute;
+	top: 80%;
+	width: 1100px;
+	height: 150px;
+	background: rgb(253, 0, 0);
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 100px #000;
+	display: inline-block;
 }
 #chk{
 	display: none;
@@ -44,7 +72,7 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
-input{
+input[type="text"], input[type="email"], input[type="password"]   {
 	width: 40%;
 	height: 20px;
 	background: #ffffff;
@@ -153,19 +181,21 @@ button:hover{
 }
 .botaoSair{
 	width: 200px;
+	max-width: 200px;
 	height: 40px;
 	/* margin: 50px auto; */
 	color: rgb(255, 255, 255);
 	background: #000000;
 	font-size: 1.5em;
 	font-weight: bold;
+	border: none;
 	border-radius: 100px;
 	cursor: pointer;
 	text-align: center;
 	/* position: 50px; */
 	display: flex;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 }
 .botao:hover{
 	background: #292929;
@@ -175,7 +205,7 @@ button:hover{
 }
 .checkbox {
 	position: absolute;
-	top: 54.3%;
+	top: 58.3%;
 	left: 0;
 	right: 27%;
 }
@@ -208,11 +238,88 @@ button:hover{
 	font-weight: 100;
 }
 .botoes-form {
+	margin-top: 10px;
 	display: flex;
 	font-size: 0.8em;
-	width: 60%;
+	width: 440px;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	background-color: red;
+}
+.botao-cadnoticia{
+	position: absolute;
+	left: 2.5%;
+	width: 15%;
+	height: 100px;
+	margin: 10px auto;
+	justify-content: center;
+	display: inline-block;
+	color: #fff;
+	background: #000000;
+	font-size: 1em;
+	font-weight: bold;
+	/* margin-top: 10px; */
+	border-radius: 5px;
+	cursor: pointer;
+	/* text-align: center; */
+}
+.botao-editnoticia{
+	position: absolute;
+	left: 22%;
+	width: 15%;
+	height: 100px;
+	margin: 10px;
+	justify-content: center;
+	display: inline-block;
+	color: #fff;
+	background: #000000;
+	font-size: 1em;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.botao-remnoticia{
+	position: absolute;
+	left: 42%;
+	width: 15%;
+	height: 100px;
+	margin: 10px;
+	justify-content: center;
+	display: inline-block;
+	color: #fff;
+	background: #000000;
+	font-size: 1em;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.botao-listnoticia{
+	position: absolute;
+	left: 61.5%;
+	width: 15%;
+	height: 100px;
+	margin: 10px;
+	justify-content: center;
+	display: inline-block;
+	color: #fff;
+	background: #000000;
+	font-size: 1em;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.botao-sair{
+	position: absolute;
+	left: 81.3%;
+	width: 15%;
+	height: 100px;
+	margin: 10px;
+	justify-content: center;
+	display: inline-block;
+	color: #fff;
+	background: #000000;
+	font-size: 1.5em;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
 }
