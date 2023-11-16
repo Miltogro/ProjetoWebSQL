@@ -4,7 +4,6 @@ from dao import *
 app = Flask(__name__)
 app.secret_key = 'tapetedeferro'
 
-id_usuario = None
 
 def varBool(reporter):
     if reporter.lower() == 'on':
@@ -17,7 +16,7 @@ def varBool(reporter):
 def home():
     return render_template('index.html')
 
-@app.route("/login", methods=["POST","GET"])
+@app.route("/login", methods=["POST"])
 def login():
     login = str(request.form.get('email'))
     senha = str(request.form.get('pswd'))
@@ -27,15 +26,13 @@ def login():
 
     for usuario in tupla:
         if(login == usuario[1] and senha == usuario[2]):
-            session['id']
             session['usuario'] = login
-            # print(id_usuario)
-            return render_template('mainlog.html', usuario=login, logado=True, id_usuario=usuario[3])
+            return render_template('mainlog.html', usuario=login, logado=True)
 
     else:
         return render_template('index.html', logado=False)
 
-@app.route("/cadastrar", methods=["POST","GET"])
+@app.route("/cadastrar", methods=["POST"])
 def cadastrarusuario():
     login = str(request.form.get('email'))
     senha = str(request.form.get('pswd'))
@@ -56,17 +53,17 @@ def cadastrarusuario():
 def mainlog():
     return render_template('mainlog.html')
 
-@app.route("/cadastrar-noticia", methods=["POST","GET"])
+@app.route("/cadastrar-noticia", methods=["POST"])
 def cadastrarNoticia():
+    '''conexao = conectardb()
     tupla = listarUsuarios(conexao)
 
     titulo = str(request.form.get('title'))
     noticia = str(request.form.get('noticia'))
 
-    conexao = conectardb()
 
-    insert = inserirNoticia(titulo, noticia, id_usuario)
-
+    insert = inserirNoticia(titulo, noticia, conexao)
+'''
     return render_template("menuADM/cadastrar_noticia.html")
 
 if __name__ == "__main__":

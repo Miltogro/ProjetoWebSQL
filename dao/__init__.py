@@ -10,7 +10,7 @@ def listarUsuarios(conexao):
     cur = conexao.cursor()
     cur.execute('SELECT * FROM usuarios')
     recset = cur.fetchall()
-    conexao.close()
+    #conexao.close()
     return recset
 
 def inserirDB(login, senha, nome, reporter, conexao):
@@ -28,15 +28,15 @@ def inserirDB(login, senha, nome, reporter, conexao):
         conexao.commit()
         exito = True
 
-    conexao.close()
+    #conexao.close()
     return exito
 
 
-def listarNoticias(conexao):
+'''def listarNoticias(conexao):
     cur = conexao.cursor()
     cur.execute('SELECT * FROM noticias')
     recset = cur.fetchall()
-    conexao.close()
+    #conexao.close()
     return recset
 
 def inserirNoticia(titulo, noticia, id_usuario, conexao):
@@ -44,7 +44,7 @@ def inserirNoticia(titulo, noticia, id_usuario, conexao):
 
     exito = False
     try:
-        sql = f"INSERT INTO noticias (titulo, noticia, id_usuario) VALUES ('{titulo}', '{noticia}', '{id_usuario}',)"
+        sql = f"INSERT INTO noticias (titulo, noticia, id_usuario) VALUES ('{titulo}', '{noticia}', {id_usuario})"
         cur.execute(sql)
     except psycopg2.IntegrityError as e:
         conexao.rollback()
@@ -54,5 +54,5 @@ def inserirNoticia(titulo, noticia, id_usuario, conexao):
         conexao.commit()
         exito = True
 
-    conexao.close()
-    return exito
+    #conexao.close()
+    return exito'''
